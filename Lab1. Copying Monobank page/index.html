@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mono Jar</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <section class="card">
+        <div class="card__header">
+          <img src="https://send.monobank.ua/img/logo_short.png" class="short-logo" alt="monobank logo">
+          <div class="jar">
+            <img class="jar__bg" src="https://send.monobank.ua/img/jar_bg.png">
+            <img class="jar__glass" src="https://send.monobank.ua/img/jar/uah_50.png">
+            <p class="jar__owner">Артем К. збирає</p>
+            <p class="jar__name">На ремонт медеваку</p>
+          </div>
+          <div class="card__info">
+            <p>Збираємо на ремонт медеваку для<br>
+              4ОТБР танкова бригада</p>
+            <br>
+            <p>Ремонтуємо 2 автівки - Тойоту та Нісан.</p>
+            <br>
+            <p>У бригаді є наші земляки з Черкащини!</p>
+            <br>
+            <p>Ремонт авто треба на вчора! Прохання підтримати!</p>
+          </div>
+    
+          <div class="stats">
+            <div class="stats-data"><img src="https://send.monobank.ua/img/collected.svg" class="stats-data__icon">
+              <div class="stats-data__text-container">
+                <div class="stats-data__label">Накопичено</div>
+                <div class="stats-data__value">7&nbsp;700&nbsp;₴</div>
+              </div>
+            </div>
+            <div class="stats-data"><img src="https://send.monobank.ua/img/target.svg" class="stats-data__icon">
+              <div class="stats-data__text-container">
+                <div class="stats-data__label">Ціль</div>
+                <div class="stats-data__value">25&nbsp;000&nbsp;₴</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card__body">
+            <div class="gradien-container">
+                <div class="jar-top-up-title">Top up amount 💸</div>
+                <div class="money-input-container"></div>
+            
+            <div class="fee-warning">2% processing fee for non-Ukrainian cards</div>
+            <div class="choice-row">
+                <div tabindex="0" class="chip-button">
+                    <div class="main-label">+100&nbsp;₴</div>
+                    <div class="sub-label">+2.38&nbsp;€</div>
+                </div>
+                <div tabindex="0" class="chip-button">
+                    <div class="main-label">+500&nbsp;₴</div>
+                    <div class="sub-label">+11.92&nbsp;€</div>
+                </div>
+                <div tabindex="0" class="chip-button">
+                    <div class="main-label">+1&nbsp;000&nbsp;₴</div>
+                    <div class="sub-label">+23.84&nbsp;€</div>
+                </div>
+            </div>
+            </div>
+            <div class="field card-holder">
+                <input type="text" id="cardHolder" class="inputF">
+                <label id="x-name-field">Your name (optional)</label>
+                <span class="err"></span>
+            </div>
+            <div class="field payment-comment">
+                <input type="text" id="comment" class="inputF active">
+                <label id="x-name-field">Comment (optional)</label>
+            </div>
+            <div class="mono-pay shown">
+                <img src="https://send.monobank.ua/img/mono_pay.svg" alt="mono Pay" class="logo">
+            </div>
+            <div class="tap-to-pay shown">
+                <div class="gpay-button-fill">
+                    <button type="button" arial-label="Google Pay" class="gpay-button black plain short en"></button>
+                </div>
+            </div>
+            <div id="manual-pan-trigger" class="shown">
+                <div class="splitter"></div>
+                <div id="card-input-button" tabindex="0">
+                    <img src="https://send.monobank.ua/img/card.svg" alt="Credit Card" class="card-icon">
+                    <div class="cardinput-label" id="x-manual-pan">Enter card details</div>
+                </div>
+            </div>
+            <div id="manual-pan" class="hidden">###</div>
+
+        </div>
+      </section>
+      <!-- <div class="footer-holder">
+        <div class="footer-copyright">
+            JSC "UNIVERSAL BANK" License of the NBU №92 dated January 20, 1994, 
+            <br>
+            Number in the State Register of Banks № 226
+        </div>
+        <div class="button-holder">
+            <div class="widget-button" tabindex="0">
+                <div class="widget-button-icon">
+                    <img src="https://send.monobank.ua/img/cup.svg">
+                    <div class="widget-button-icon-text">Run a raffle</div>
+                </div>
+            </div>
+            <div class="widget-button" tabindex="0">
+                <div class="widget-button-icon">
+                    <img src="https://send.monobank.ua/img/gamepad.svg">
+                    <div class="widget-button-icon-text">Streaming widget</div>
+                </div>
+            </div>
+        </div>
+      </div> -->
+</body>
+</html>
