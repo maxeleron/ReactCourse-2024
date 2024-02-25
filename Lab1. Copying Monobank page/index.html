@@ -43,10 +43,16 @@
           </div>
         </div>
         <div class="card__body">
-            <div class="gradien-container">
+            <!-- <div class="firstPadding" style="display: none;"></div> -->
+            <div class="inputBlock">
+            <div class="gradient-container gradientBorder">
                 <div class="jar-top-up-title">Top up amount 💸</div>
-                <div class="money-input-container"></div>
-            
+                <div class="money-input-container">
+                    <div class="money-input-block empty">
+                        <div class="money-imput-contenteditable" contenteditable="true" inputmode="decimal">0</div>
+                        <div class="money-input-trailing"> ₴</div>
+                    </div>
+                    <!-- <div class="money-input-subtitle hidden">Minimum amount: 10 ₴. Maximum amount: 29 999 ₴</div> -->
             <div class="fee-warning">2% processing fee for non-Ukrainian cards</div>
             <div class="choice-row">
                 <div tabindex="0" class="chip-button">
@@ -63,6 +69,8 @@
                 </div>
             </div>
             </div>
+        </div>
+        </div>
             <div class="field card-holder">
                 <input type="text" id="cardHolder" class="inputF">
                 <label id="x-name-field">Your name (optional)</label>

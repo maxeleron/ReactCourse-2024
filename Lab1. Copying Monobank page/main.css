@@ -119,3 +119,45 @@
     line-height: 24px;
     color: #000;
   }
+
+/* GRADIENT CONTAINER START */
+.firstPadding {
+    margin-top: 25px
+}
+
+/* .inputBlock {
+    min-height: 100%;
+    position: relative;
+} */
+
+.gradient-container {
+    display: block;
+    position: relative;
+    padding: 24px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 394px;
+    border: solid 3px transparent; 
+    /* background: #fff; */
+    border-radius: 24px;
+    margin-top: 42px;
+    margin-bottom: 32px;
+    padding: 10px;
+    border: double 3px transparent;
+    background-image: linear-gradient(white, white), linear-gradient(92.12deg, #57b5f9 0%, #da11ba 100%);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    box-sizing: border-box;
+
+}
+
+.jar-top-up-title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 0 !important
+}
+  /* GRADIENT CONTAINER START */
