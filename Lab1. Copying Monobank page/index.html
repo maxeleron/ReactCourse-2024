@@ -13,7 +13,7 @@
           <div class="jar">
             <img class="jar__bg" src="https://send.monobank.ua/img/jar_bg.png">
             <img class="jar__glass" src="https://send.monobank.ua/img/jar/uah_50.png">
-            <p class="jar__owner">Артем К. збирає</p>
+            <p class="jar__owner">Артем К. created the jar</p>
             <p class="jar__name">На ремонт медеваку</p>
           </div>
           <div class="card__info">
@@ -30,13 +30,13 @@
           <div class="stats">
             <div class="stats-data"><img src="https://send.monobank.ua/img/collected.svg" class="stats-data__icon">
               <div class="stats-data__text-container">
-                <div class="stats-data__label">Накопичено</div>
+                <div class="stats-data__label">Accumulated</div>
                 <div class="stats-data__value">7&nbsp;700&nbsp;₴</div>
               </div>
             </div>
             <div class="stats-data"><img src="https://send.monobank.ua/img/target.svg" class="stats-data__icon">
               <div class="stats-data__text-container">
-                <div class="stats-data__label">Ціль</div>
+                <div class="stats-data__label">Goal</div>
                 <div class="stats-data__value">25&nbsp;000&nbsp;₴</div>
               </div>
             </div>
@@ -49,7 +49,7 @@
                 <div class="jar-top-up-title">Top up amount 💸</div>
                 <div class="money-input-container">
                     <div class="money-input-block empty">
-                        <div class="money-imput-contenteditable" contenteditable="true" inputmode="decimal">0</div>
+                        <div class="money-input-contenteditable" contenteditable="true" inputmode="decimal">0</div>
                         <div class="money-input-trailing"> ₴</div>
                     </div>
                     <!-- <div class="money-input-subtitle hidden">Minimum amount: 10 ₴. Maximum amount: 29 999 ₴</div> -->
@@ -72,13 +72,15 @@
         </div>
         </div>
             <div class="field card-holder">
-                <input type="text" id="cardHolder" class="inputF">
-                <label id="x-name-field">Your name (optional)</label>
+                <input type="text" id="cardHolder" class="inputF" placeholder="Your name (optional)">
+                <label id="x-name-field"></label>
+                <!-- <label id="x-name-field">Your name (optional)</label> -->
                 <span class="err"></span>
             </div>
             <div class="field payment-comment">
-                <input type="text" id="comment" class="inputF active">
-                <label id="x-name-field">Comment (optional)</label>
+                <input type="text" id="comment" class="inputF active" placeholder="Comment (optional)">
+                <label id="x-name-field"></label>
+                <!-- <label id="x-name-field">Comment (optional)</label> -->
             </div>
             <div class="mono-pay shown">
                 <img src="https://send.monobank.ua/img/mono_pay.svg" alt="mono Pay" class="logo">
