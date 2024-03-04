@@ -5,12 +5,33 @@
   
   body {
     background: linear-gradient(136.56deg, #8a53b6 0%, #cea2d0 97.42%) no-repeat;
-    min-height: 110vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Inter", "LatoWeb", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    padding-top: 64px;
+    padding-bottom: 10px;
   }
+
+  .canvas {
+    
+    min-width:990px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  } 
   
   .card {
     display: flex;
@@ -138,10 +159,10 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 394px;
-    border: solid 3px transparent; 
+    border: solid 4px transparent; 
     /* background: #fff; */
     border-radius: 24px;
-    margin-top: 42px;
+    /* margin-top: 42px; */
     margin-bottom: 32px;
     border: double 3px transparent;
     background-image: linear-gradient(white, white), linear-gradient(92.12deg, #57b5f9 0%, #da11ba 100%);
@@ -346,6 +367,39 @@ display: -webkit-box;
   line-height: 24px;
 }
 
+
+.choice-row .chip-button .sub-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #808080
+}
+
+.choice-row .chip-button.disabled {
+  opacity: .5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  cursor: not-allowed
+}
+
+.choice-row .chip-button:hover {
+  background: #e6e6e6
+}
+
+.choice-row .chip-button:first-child {
+  margin-left: 0
+}
+
+.choice-row .chip-button:last-child {
+  margin-right: 0
+}
+
+img.money-emoji {
+  width: 16px;
+  margin-left: .5em;
+  margin-bottom: -3px
+}
+
 .inputF {
   max-width: 306px;
   width: 306px;
@@ -357,6 +411,8 @@ display: -webkit-box;
   background: transparent;
   padding: 0 16px;
   height: 56px;
+  font-family: inherit;
+  font-weight: 600;
 }
 .field .input.inputF {
 text-transform: none;
@@ -364,7 +420,7 @@ text-transform: none;
   text-align: left;
   border: 0;
   color: #000;
-  height: 41px;
+  height: 40px;
   width: 100%;
   font-size: 16px;
   line-height: 24px;
@@ -377,15 +433,335 @@ text-transform: none;
 }
 
 .inputF::placeholder {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 400;
   text-align: left;
   transition: font-size 0.3s ease, transform 0.3s ease;
   transform: translate(0, 0);
 }
 
 .inputF:focus::placeholder {
-  font-size: 10px;
+  font-size: 12px;
   text-align: left;
   transform: translate(0%, -140%);
 }
-  /* GRADIENT CONTAINER END */
+
+.inputF:hover::placeholder {
+  font-size: 12px;
+  text-align: left;
+  transform: translate(0%, -140%);
+}
+/* GRADIENT CONTAINER END */
+
+/* MonoPay START */
+.tap-to-pay, .mono-pay {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  height: 48px;
+  margin: 0 auto;
+  width: 340px;
+  border-radius: 8px;
+  background: #000;
+  justify-content: center;
+}
+
+.mono-pay {
+  cursor: pointer;
+  margin-bottom: 16px
+}
+
+.mono-pay .logo {
+  height: 26px;
+  margin: auto
+}
+
+.mono-pay .logo.hidden {
+  display: none
+}
+
+.mono-pay:hover, .mono-pay:focus-visible {
+  background: #3c4043
+}
+
+.mono-pay:active {
+  background: #4b4f52
+}
+
+.gpay-card-info-container {
+  border-radius: 8px;
+  overflow: hidden
+}
+
+/* MonoPay END */
+/* GooglePay Button START */
+
+.gpay-button {
+  background-origin: content-box;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0px;
+  border-radius: 4px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 1px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+  height: 40px;
+  min-height: 40px;
+  height: 100%;
+  padding: 12px 24px 10px;
+  /* margin: 0 auto; */
+  display: flex;
+  width: 240px;
+}
+
+.gpay-button.black {
+  background-color: #000;
+  box-shadow: none;
+}
+
+.gpay-button.short, .gpay-button.plain {
+  min-width: 90px;
+  width: 160px;
+}
+
+.gpay-button.black.short, .gpay-button.black.plain {
+  background-image: url(https://www.gstatic.com/instantbuy/svg/dark_gpay.svg);
+}
+
+.gpay-button.black.short.new_style, .gpay-button.black.plain.new_style {
+  background-image: url(https://www.gstatic.com/instantbuy/svg/refreshedgraphicaldesign/dark_gpay.svg);
+  min-width: 160px;
+  background-size: contain;
+}
+
+.gpay-button.black.active {
+  background-color: #5f6368;
+}
+
+.gpay-button.white.focus {
+  box-shadow: #e8e8e8 0 1px 1px 0, #e8e8e8 0 1px 3px;
+} 
+/* GooglePay Button END */
+/* Manual card input START */
+#manual-pan-trigger {
+  max-width: none;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0
+}
+
+#manual-pan-trigger {
+  display: none;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 24px;
+  margin-right: 24px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 340px;
+  margin-bottom: 42px
+}
+
+#manual-pan-trigger.shown {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex
+}
+
+#manual-pan-trigger .splitter {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  border-top: .5px solid #ccc;
+  width: 100%
+}
+
+#manual-pan.hidden {
+  display: none
+}
+
+#card-input-button,.button.white {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  background: transparent;
+  color: #e85e5b;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -ms-transition: background 0.2s;
+  transition: background 0.2s;
+  border-radius: 8px
+}
+
+#card-input-button .card-icon,.button.white .card-icon {
+  width: 16px;
+  height: 26px;
+  margin-right: 8px
+}
+/* Manual card input END */
+/* Footer START */
+.footer-holder {
+  display: flex;
+  width: 990px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  color: #fff;
+  /* display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  color: #fff;
+  z-index: 1;
+  margin-bottom: 16px */
+}
+
+.footer-holder .footer-copyright {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  opacity: .8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80)
+}
+
+.button-holder {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex
+}
+
+.widget-button + .widget-button {
+  margin-left: 16px
+}
+
+.widget-button {
+  background: rgba(255,255,255,0.08);
+  border: .5px solid rgba(255,255,255,0.4);
+  border-radius: 16px;
+  position: relative;
+  -webkit-align-self: end;
+  align-self: end;
+  -ms-flex-item-align: end;
+  padding: 0 16px;
+  height: 40px;
+  color: #fff;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out;
+  -ms-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer
+}
+
+.widget-button:hover {
+  background: rgba(255,255,255,0.2)
+}
+
+.widget-button-icon {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center
+}
+
+.widget-button-icon img {
+  width: 16px;
+  height: 16px
+}
+
+.widget-button-icon-text {
+  margin-left: 8px
+}
+/* Footer END */
