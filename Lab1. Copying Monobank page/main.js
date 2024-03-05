@@ -2,12 +2,14 @@
 const minTransaction = 10;
 const maxTransaction = 29999;
 const initialAccumulated = 7700;
+const goalValue = 250000;
 const currencySymbol = ' ₴';
 
-// Getting UI elements
+// MoneyInput elements
 const moneyInput = document.getElementsByClassName('money-input-contenteditable')[0];
-moneyInput.textContent = localStorage.getItem("userInput") || 0;;
 const moneyInputBlock = document.getElementsByClassName('money-input-block')[0];
+// Getting userInput value from localStorage or defolting it ot '0'
+moneyInput.textContent = localStorage.getItem("userInput") || 0;;
 // Increment buttons
 const add100 = document.getElementsByClassName('chip-button')[0];
 const add500 = document.getElementsByClassName('chip-button')[1];
@@ -20,8 +22,7 @@ const accumulatedDisplay = document.getElementsByClassName('stats-data__value')[
 const goalDisplay = document.getElementsByClassName('stats-data__value')[1];
 // Jar stats variables
 let accumulatedValue = +localStorage.getItem('accumulated') || initialAccumulated;
-const goalValue = 250000;
-// User name and comment to store them in local storage (and output in Console.log)
+// User name and comment
 const userNameInput = document.getElementsByClassName('inputF')[0];
 userNameInput.value = localStorage.getItem('userName');
 const userCommentInput = document.getElementsByClassName('inputF')[1];
@@ -31,7 +32,7 @@ let userComment = localStorage.getItem('userComment');
 // Small message that appears when user enters inputValue less then minTransaction
 const transactionExplanation = document.getElementsByClassName('money-input-subtitle')[0];
 
-// Getting Jar img to modify it
+// Jar img element
 const jarGlassImg = document.getElementsByClassName('jar__glass')[0];
 // Function to change Jar background
 const jarGlassUpd = function(){
@@ -44,8 +45,6 @@ const jarGlassUpd = function(){
         jarGlassImg.src='https://send.monobank.ua/img/jar/uah_100.png';
     }
 }
-// As we store 'accumulated' value between sessions, I update jar img after page is loaded
-jarGlassUpd();
 
 // Function to add money via chip buttons
 const addMoney = function(increment){
@@ -66,9 +65,6 @@ const addMoney = function(increment){
     // Update jar img, as we add money to it
     jarGlassUpd();
 }
-
-// Widget buttons on bottom will be 'Reset' buttons, that will reverse all user data, and set 'Accumulated' to its initial state
-const widgetButtons = document.getElementsByClassName('widget-button-icon');
 
 // Function to format numbers, so they will be displayed with spaces every 3 digits
 function formatNumber(nr) {
@@ -133,29 +129,24 @@ add1000.addEventListener('click', function() {
 
 moneyInput.addEventListener("input", function() {
     console.log("input event fired");
-        // removing Zero from the beggining of the string
-    // console.log('before ' + moneyInput.textContent);
+    // Removing leading Zero from the beggining of the string using parseInt()
     if(moneyInput.textContent) {
         moneyInput.textContent = parseInt(moneyInput.textContent);
     } else {
+        // User is not allowed to have empty moneyInput, we display '0' instead
         moneyInput.textContent = '0';
     }
-    // console.log('after ' + moneyInput.textContent);
 
-    // removing class 'empty'
+    // Changing CSS classes according to moneyInput value
     if (parseInt(moneyInput.textContent) >= minTransaction){
         moneyInputBlock.classList.remove('empty');
         moneyInputBlock.classList.remove('incorrect');
         transactionExplanation.classList.add('hidden');
     }
-
     if (parseInt(moneyInput.textContent) < minTransaction){
         moneyInputBlock.classList.add("incorrect");
         transactionExplanation.classList.remove('hidden');
     }
-
-    if (parseInt(moneyInput.textContent) == 0)
-        moneyInputBlock.classList.add("empty");
 
     // setting max to input
     if (parseInt(moneyInput.textContent) > maxTransaction)
@@ -164,24 +155,21 @@ moneyInput.addEventListener("input", function() {
     localStorage.setItem('userInput', moneyInput.textContent);
 }, false);
 
+// Storing userName and userComment to localStorage every time inputs are modified
 userNameInput.addEventListener('input', function() {
     localStorage.setItem('userName', userNameInput.value);
-    console.log('I`ve set value to ' + userNameInput.value)
-    console.log('userName == ' + localStorage.getItem('userName'));
 });
 
 userCommentInput.addEventListener('input', function() {
     localStorage.setItem('userComment', userCommentInput.value);
 });
-// moneyInput.addEventListener('keydown', function(e) {
 
-// });
-
+// Widget buttons on bottom will be 'Reset' buttons, that will reverse all user data, and set 'Accumulated' to its initial state
+const widgetButtons = document.getElementsByClassName('widget-button-icon');
 // Resetting user data by clicking any of widget buttons at the bottom
 // by getting elements with the same className, we create 'collection' not an 'array'
 [widgetButtons[0], widgetButtons[1]].forEach(function(element) {
     element.addEventListener('click', function(){
-        alert('Click!');
         localStorage.removeItem('accumulated');
         localStorage.removeItem('userInput');
         localStorage.removeItem('userName');
@@ -192,5 +180,24 @@ userCommentInput.addEventListener('input', function() {
     });
 });
 
+// INITIALIZATION CODE - running once after loading page
+// Display Goal
+goalDisplay.textContent = formatNumber(goalValue) + currencySymbol;
 
+// Display Accumulated
+accumulatedDisplay.textContent = formatNumber(accumulatedValue) + currencySymbol;
+
+// As we store 'accumulated' value between sessions, I update jar img after page is loaded
+jarGlassUpd();
+
+// Loading correct CSS according to displayed numeric values
+if(parseInt(moneyInput.textContent) !== 0 && parseInt(moneyInput.textContent) < minTransaction) {
+    moneyInputBlock.classList.remove("empty");
+    moneyInputBlock.classList.add('incorrect');
+    transactionExplanation.classList.remove('hidden');
+}
+else if (parseInt(moneyInput.textContent) > minTransaction) {
+    moneyInputBlock.classList.remove("empty");
+    moneyInputBlock.classList.remove('incorrect');
+}
 

@@ -18,3 +18,6 @@
 - [JS] Feature: after filling all fields and pressing 'GPay' or 'MonoPay' transaction info will be displayed in Console;
 - [JS] Extra: Transaction should affect 'Accumulated' value;
 - [JS] Extra: 'Accumulated' value should be saved with localstorage;
+
+index.html was checked with https://validator.w3.org/nu/#file
+Validator throws errors about using img without alt attribute, but in case of decorative images we can ignore adding alt attribute (https://www.w3.org/WAI/tutorials/images/)
