@@ -476,7 +476,13 @@ text-transform: none;
 
 .mono-pay .logo {
   height: 26px;
-  margin: auto
+  margin: auto;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .mono-pay .logo.hidden {
@@ -514,7 +520,8 @@ text-transform: none;
   padding: 12px 24px 10px;
   /* margin: 0 auto; */
   display: flex;
-  width: 240px;
+  width: 440px;
+  /* width: 100%; */
 }
 
 .gpay-button.black {
@@ -524,7 +531,7 @@ text-transform: none;
 
 .gpay-button.short, .gpay-button.plain {
   min-width: 90px;
-  width: 160px;
+  width: 340px;
 }
 
 .gpay-button.black.short, .gpay-button.black.plain {
@@ -765,3 +772,38 @@ text-transform: none;
   margin-left: 8px
 }
 /* Footer END */
+/* EXTRA: JAR RULER STAR */
+.jar .grid-container {
+  position: absolute;
+  top: 36px;
+  left: 53px;
+}
+
+.jar .grid-container img.grid {
+  width: 42px;
+  height: 168px
+}
+
+.jar .grid-container .jar-label {
+  font-weight: 800;
+  font-size: 10px;
+  color: #8e5b5b;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.jar .grid-container .jar-label.jar-bottom {
+  bottom: 8px;
+  left: 7px;
+}
+
+.jar .grid-container .jar-label.jar-middle {
+  bottom: 83px;
+  left: 5px
+}
+
+.jar .grid-container .jar-label.jar-goal {
+  bottom: 157px;
+  left: 16px
+}
+/* EXTRA: JAR RULER END */
