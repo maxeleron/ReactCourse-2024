@@ -28,9 +28,12 @@ const userCommentInput = document.getElementsByClassName('inputF')[1];
 userCommentInput.value = localStorage.getItem('userComment');
 let userName = localStorage.getItem('userName') || 'Anonymous';
 let userComment = localStorage.getItem('userComment');
-// Getting Jar img to modify it later
-const jarGlassImg = document.getElementsByClassName('jar__glass')[0];
+// Small message that appears when user enters inputValue less then minTransaction
+const transactionExplanation = document.getElementsByClassName('money-input-subtitle')[0];
 
+// Getting Jar img to modify it
+const jarGlassImg = document.getElementsByClassName('jar__glass')[0];
+// Function to change Jar background
 const jarGlassUpd = function(){
     const jarProgression = accumulatedValue/goalValue;
     if(jarProgression < 0.34) {
@@ -41,19 +44,26 @@ const jarGlassUpd = function(){
         jarGlassImg.src='https://send.monobank.ua/img/jar/uah_100.png';
     }
 }
-
+// As we store 'accumulated' value between sessions, I update jar img after page is loaded
 jarGlassUpd();
 
+// Function to add money via chip buttons
 const addMoney = function(increment){
+    // Comparing our input to maxTransaction value,
+    // If input exeeds maxValue, we just set maxValue to input instead
     if ((parseInt(moneyInput.textContent) + increment) > maxTransaction)
-        moneyInput.textContent = maxTransaction;
+        moneyInput.textContent = maxTransaction; 
+    // If input value within accepted range, we add it to inputValue
     else moneyInput.textContent = parseInt(moneyInput.textContent) + increment;
 
     localStorage.setItem("userInput", moneyInput.textContent);
 
+    // As we add either 100, 500 or 1000 our 'userInput' value will not be neither 'empty' nor 'incorrect'
     moneyInputBlock.classList.remove('empty');
     moneyInputBlock.classList.remove('incorrect');
+    transactionExplanation.classList.add('hidden');
 
+    // Update jar img, as we add money to it
     jarGlassUpd();
 }
 
@@ -70,16 +80,6 @@ function formatNumber(nr) {
       .join('')
       .trim();
 }
-
-// const updateAccumulated = function() {
-//     const sum = accumulatedValue + parseInt(moneyInput.textContent);
-//     localStorage.setItem("accumulated", sum);
-
-//     accumulatedDisplay.textContent = formatNumber(sum) + currencySymbol;
-//     console.log('Now accumulated: ' + sum + ', by adding ' + moneyInput.textContent);
-//     moneyInput.textContent = 0;
-//     accumulatedDisplay.textContent = formatNumber(accumulatedValue + +moneyInput.textContent) + currencySymbol;
-// }
 
 // MoneyInput will only take numbers
 // moneyInput length is limited to 5 (as max value of transaction is 29.999)
@@ -143,13 +143,16 @@ moneyInput.addEventListener("input", function() {
     // console.log('after ' + moneyInput.textContent);
 
     // removing class 'empty'
-    if (parseInt(moneyInput.textContent) > minTransaction){
+    if (parseInt(moneyInput.textContent) >= minTransaction){
         moneyInputBlock.classList.remove('empty');
         moneyInputBlock.classList.remove('incorrect');
+        transactionExplanation.classList.add('hidden');
     }
 
-    if (parseInt(moneyInput.textContent) < minTransaction)
+    if (parseInt(moneyInput.textContent) < minTransaction){
         moneyInputBlock.classList.add("incorrect");
+        transactionExplanation.classList.remove('hidden');
+    }
 
     if (parseInt(moneyInput.textContent) == 0)
         moneyInputBlock.classList.add("empty");

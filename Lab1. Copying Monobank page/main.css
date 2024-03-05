@@ -12,12 +12,10 @@
     font-family: "Inter", "LatoWeb", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     padding-top: 64px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
 
   .canvas {
-    
-    min-width:990px;
     margin: 0 auto;
     display: -webkit-box;
     display: -moz-box;
@@ -73,7 +71,6 @@
   }
   
   /* JAR */
-  
   .jar {
     position: relative;
     text-align: center;
@@ -108,7 +105,6 @@
   }
   
   /* STATS */
-  
   .stats {
     margin-top: 16px;
     display: flex;
@@ -146,11 +142,6 @@
     margin-top: 25px
 }
 
-/* .inputBlock {
-    min-height: 100%;
-    position: relative;
-} */
-
 .gradient-container {
     display: block;
     position: relative;
@@ -160,16 +151,13 @@
     box-sizing: border-box;
     width: 394px;
     border: solid 4px transparent; 
-    /* background: #fff; */
     border-radius: 24px;
-    /* margin-top: 42px; */
     margin-bottom: 32px;
     border: double 3px transparent;
     background-image: linear-gradient(white, white), linear-gradient(92.12deg, #57b5f9 0%, #da11ba 100%);
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
     box-sizing: border-box;
-
 }
 
 .jar-top-up-title {
@@ -225,7 +213,6 @@
   color: #b30953
 }
 
-
 .money-input-block-empty {
   opacity: .4;
   display: -webkit-box;
@@ -249,7 +236,7 @@
   -ms-transition: opacity 0.2s;
   transition: opacity 0.2s;
   padding: 20px 0;
-  font-family: "Inter", "LatoWeb", 'Segoe UI', Tahoma, Geneva, Verdana,     sans-serif;
+  font-family: "Inter", "LatoWeb", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .money-input-trailing {
@@ -518,10 +505,8 @@ text-transform: none;
   min-height: 40px;
   height: 100%;
   padding: 12px 24px 10px;
-  /* margin: 0 auto; */
   display: flex;
   width: 440px;
-  /* width: 100%; */
 }
 
 .gpay-button.black {
