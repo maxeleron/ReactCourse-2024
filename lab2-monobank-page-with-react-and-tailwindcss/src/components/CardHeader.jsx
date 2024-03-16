@@ -1,5 +1,6 @@
 import Jar from './Jar';
 import JarDescription from './JarDescription';
+import JarStats from './JarStats';
 
 function CardHeader() {
     return <div className='card-component bg-mono-cardheader'>
@@ -7,7 +8,7 @@ function CardHeader() {
 
         <Jar />
         <JarDescription />
-        Header
+        <JarStats />
     </div>
 }
 

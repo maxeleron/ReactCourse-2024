@@ -1,3 +1,622 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card-component {
+    @apply w-6/12 flex flex-col items-center p-[42px];
+}
+
+.jar-label {
+    @apply font-extrabold text-[10px] text-mono-jar-label-brown absolute whitespace-nowrap;
+}
+
+.stats-data {
+    @apply flex gap-3 mx-0 my-3 px-5 py-0;
+}
+
+.stats-data__label {
+    @apply font-normal text-sm leading-4 text-mono-gray;
+}
+
+.stats-data__value {
+    @apply font-medium text-base leading-6 text-black;
+}
+
+/* OLD CSS */
+
+/* GRADIENT CONTAINER START */
+.firstPadding {
+    margin-top: 25px
+}
+
+.gradient-container {
+    display: block;
+    position: relative;
+    padding: 24px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 394px;
+    border: solid 4px transparent; 
+    border-radius: 24px;
+    margin-bottom: 32px;
+    border: double 3px transparent;
+    background-image: linear-gradient(white, white), linear-gradient(92.12deg, #57b5f9 0%, #da11ba 100%);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    box-sizing: border-box;
+}
+
+.jar-top-up-title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 0 !important
+}
+
+.money-input-contenteditable {
+  outline: 0;
+  padding-right: 1px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.money-input-block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  padding: 20px 0
+}
+
+.money-input-block.empty {
+  opacity: .4;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40)
+}
+
+.money-input-block.incorrect {
+  opacity: .5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  color: #b30953
+}
+
+.money-input-block-empty {
+  opacity: .4;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  padding: 20px 0;
+  font-family: "Inter", "LatoWeb", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.money-input-trailing {
+  white-space: pre-wrap;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex;
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -o-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end
+}
+
+.money-input-subtitle {
+  margin-top: -24px;
+  margin-bottom: 18px;
+  margin-right: 16px;
+  margin-left: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  color: #808080
+}
+
+.money-input-subtitle.hidden {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: block !important
+}
+
+.fee-warning {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #808080;
+  margin-bottom: 16px;
+  margin-top: -20px
+}
+
+.choice-row {
+display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex;
+  max-width: 346px;
+  margin: auto;
+  margin-top: 0;
+  width: 100%;
+}
+
+.choice-row .chip-button {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  padding: 0 3px;
+  text-align: center;
+  margin: 0 8px;
+  transition: background .2s;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 40px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.choice-row .chip-button .main-label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+.choice-row .chip-button .sub-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #808080
+}
+
+.choice-row .chip-button.disabled {
+  opacity: .5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  cursor: not-allowed
+}
+
+.choice-row .chip-button:hover {
+  background: #e6e6e6
+}
+
+.choice-row .chip-button:first-child {
+  margin-left: 0
+}
+
+.choice-row .chip-button:last-child {
+  margin-right: 0
+}
+
+img.money-emoji {
+  width: 16px;
+  margin-left: .5em;
+  margin-bottom: -3px
+}
+
+.inputF {
+  max-width: 306px;
+  width: 306px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  background: transparent;
+  padding: 0 16px;
+  height: 56px;
+  font-family: inherit;
+  font-weight: 600;
+}
+.field .input.inputF {
+text-transform: none;
+  background: none;
+  text-align: left;
+  border: 0;
+  color: #000;
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 0;
+  margin-top: 12px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.inputF::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  transition: font-size 0.3s ease, transform 0.3s ease;
+  transform: translate(0, 0);
+}
+
+.inputF:focus::placeholder {
+  font-size: 12px;
+  text-align: left;
+  transform: translate(0%, -140%);
+}
+
+.inputF:hover::placeholder {
+  font-size: 12px;
+  text-align: left;
+  transform: translate(0%, -140%);
+}
+/* GRADIENT CONTAINER END */
+/* MonoPay START */
+.tap-to-pay, .mono-pay {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex;
+  height: 48px;
+  margin: 0 auto;
+  width: 340px;
+  border-radius: 8px;
+  background: #000;
+  justify-content: center;
+}
+
+.mono-pay {
+  cursor: pointer;
+  margin-bottom: 16px
+}
+
+.mono-pay .logo {
+  height: 26px;
+  margin: auto;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.mono-pay .logo.hidden {
+  display: none
+}
+
+.mono-pay:hover, .mono-pay:focus-visible {
+  background: #3c4043
+}
+
+.mono-pay:active {
+  background: #4b4f52
+}
+
+.gpay-card-info-container {
+  border-radius: 8px;
+  overflow: hidden
+}
+/* MonoPay END */
+/* GooglePay Button START */
+.gpay-button {
+  background-origin: content-box;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0px;
+  border-radius: 4px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 1px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+  height: 40px;
+  min-height: 40px;
+  height: 100%;
+  padding: 12px 24px 10px;
+  display: flex;
+  width: 440px;
+}
+
+.gpay-button.black {
+  background-color: #000;
+  box-shadow: none;
+}
+
+.gpay-button.short, .gpay-button.plain {
+  min-width: 90px;
+  width: 340px;
+}
+
+.gpay-button.black.short, .gpay-button.black.plain {
+  background-image: url(https://www.gstatic.com/instantbuy/svg/dark_gpay.svg);
+}
+
+.gpay-button.black.short.new_style, .gpay-button.black.plain.new_style {
+  background-image: url(https://www.gstatic.com/instantbuy/svg/refreshedgraphicaldesign/dark_gpay.svg);
+  min-width: 160px;
+  background-size: contain;
+}
+
+.gpay-button.black.active {
+  background-color: #5f6368;
+}
+
+.gpay-button.white.focus {
+  box-shadow: #e8e8e8 0 1px 1px 0, #e8e8e8 0 1px 3px;
+} 
+/* GooglePay Button END */
+/* Manual card input START */
+#manual-pan-trigger {
+  max-width: none;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0
+}
+
+#manual-pan-trigger {
+  display: none;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 24px;
+  margin-right: 24px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 340px;
+  margin-bottom: 42px
+}
+
+#manual-pan-trigger.shown {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex
+}
+
+#manual-pan-trigger .splitter {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  border-top: .5px solid #ccc;
+  width: 100%
+}
+
+#manual-pan.hidden {
+  display: none
+}
+
+#card-input-button,.button.white {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  background: transparent;
+  color: #e85e5b;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -ms-transition: background 0.2s;
+  transition: background 0.2s;
+  border-radius: 8px
+}
+
+#card-input-button .card-icon,.button.white .card-icon {
+  width: 16px;
+  height: 26px;
+  margin-right: 8px
+}
+/* Manual card input END */
+/* Footer START */
+.footer-holder {
+  display: flex;
+  width: 990px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  color: #fff;
+}
+
+.footer-holder .footer-copyright {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  opacity: .8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80)
+}
+
+.button-holder {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex
+}
+
+.widget-button + .widget-button {
+  margin-left: 16px
+}
+
+.widget-button {
+  background: rgba(255,255,255,0.08);
+  border: .5px solid rgba(255,255,255,0.4);
+  border-radius: 16px;
+  position: relative;
+  -webkit-align-self: end;
+  align-self: end;
+  -ms-flex-item-align: end;
+  padding: 0 16px;
+  height: 40px;
+  color: #fff;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out;
+  -ms-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer
+}
+
+.widget-button:hover {
+  background: rgba(255,255,255,0.2)
+}
+
+.widget-button-icon {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: box; */
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center
+}
+
+.widget-button-icon img {
+  width: 16px;
+  height: 16px
+}
+
+.widget-button-icon-text {
+  margin-left: 8px
+}
+/* Footer END */

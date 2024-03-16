@@ -1,10 +1,11 @@
 // import { useState } from 'react'
-import Frame from './Frame';
+import Frame from './components/Frame';
 import './App.css'
 
 function App(){
   return <>
-    <Frame></Frame>
+    <Frame>
+    </Frame>
   </>
 }
 
