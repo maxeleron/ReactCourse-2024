@@ -11,7 +11,9 @@ export default {
         'mono-cyan': '#cea2d0',
         'mono-cardheader': '#f3f4f6',
         'mono-jar-label-brown': '#8e5b5b',
-        'mono-gray': '#808080'
+        'mono-gray': '#808080',
+        'mono-light-gray': '#e6e6e6',
+        'mono-incorrect-red': '#b30953'
       }
     },
   },

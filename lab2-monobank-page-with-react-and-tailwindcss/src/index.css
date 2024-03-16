@@ -22,250 +22,68 @@
     @apply font-medium text-base leading-6 text-black;
 }
 
+.fee-warning {
+    @apply font-normal text-xs leading-4 text-center text-mono-gray -mt-5 mb-4;
+}
+
+.chip-button {
+    @apply border text-center transition-[background] duration-[0.2s] cursor-pointer select-none min-h-[40px] flex flex-1 flex-col justify-center mx-2 my-0 px-[3px] py-0 rounded-2xl border-solid border-[#ccc] bg-white;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -ms-flex-pack: center;
+  }
+
+.chip-button:hover {
+    @apply bg-mono-light-gray;
+}
+
+  .money-input-subtitle {
+    @apply font-normal text-xs leading-none text-center text-mono-gray -mt-6 mb-4 mx-4;
+  }
+  
+  .money-input-subtitle.hidden {
+    @apply opacity-0 select-none block;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  
+  .money-input-block {
+    @apply flex justify-center font-bold text-5xl text-center transition-opacity duration-[0.2s] px-0 py-5;
+}
+
+  /* State Classes */
+
+  .empty {
+    @apply opacity-40;
+  }
+
+  .incorrect {
+    @apply opacity-50 text-mono-incorrect-red;
+  }
 /* OLD CSS */
 
 /* GRADIENT CONTAINER START */
-.firstPadding {
-    margin-top: 25px
-}
-
 .gradient-container {
-    display: block;
-    position: relative;
-    padding: 24px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 394px;
-    border: solid 4px transparent; 
-    border-radius: 24px;
-    margin-bottom: 32px;
-    border: double 3px transparent;
-    background-image: linear-gradient(white, white), linear-gradient(92.12deg, #57b5f9 0%, #da11ba 100%);
+    @apply block relative box-border w-[394px] box-border mb-8 p-6 rounded-3xl border-[solid] border-4 border-transparent border-[double] bg-[linear-gradient(white,white),linear-gradient(92.12deg,#57b5f9_0%,#da11ba_100%)];
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
-    box-sizing: border-box;
-}
 
-.jar-top-up-title {
-    text-align: center;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 0 !important
-}
-
-.money-input-contenteditable {
-  outline: 0;
-  padding-right: 1px;
-  font-size: 48px;
-  font-weight: 700;
-}
-
-.money-input-block {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  /* display: box; */
-  display: flex;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -o-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 48px;
-  text-align: center;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-  padding: 20px 0
-}
-
-.money-input-block.empty {
-  opacity: .4;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-  filter: alpha(opacity=40)
-}
-
-.money-input-block.incorrect {
-  opacity: .5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
-  color: #b30953
-}
-
-.money-input-block-empty {
-  opacity: .4;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  /* display: box; */
-  display: flex;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -o-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 48px;
-  text-align: center;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-  padding: 20px 0;
-  font-family: "Inter", "LatoWeb", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.money-input-trailing {
-  white-space: pre-wrap;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  /* display: box; */
-  display: flex;
-  -webkit-box-align: end;
-  -moz-box-align: end;
-  -o-box-align: end;
-  -ms-flex-align: end;
-  -webkit-align-items: flex-end;
-  align-items: flex-end
-}
-
-.money-input-subtitle {
-  margin-top: -24px;
-  margin-bottom: 18px;
-  margin-right: 16px;
-  margin-left: 16px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1;
-  text-align: center;
-  color: #808080
-}
-
-.money-input-subtitle.hidden {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  display: block !important
-}
-
-.fee-warning {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  text-align: center;
-  color: #808080;
-  margin-bottom: 16px;
-  margin-top: -20px
-}
-
-.choice-row {
-display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  /* display: box; */
-  display: flex;
-  max-width: 346px;
-  margin: auto;
-  margin-top: 0;
-  width: 100%;
-}
-
-.choice-row .chip-button {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 16px;
-  padding: 0 3px;
-  text-align: center;
-  margin: 0 8px;
-  transition: background .2s;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  min-height: 40px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  /* display: box; */
-  display: flex;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -o-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -o-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -o-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.choice-row .chip-button .main-label {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-
-.choice-row .chip-button .sub-label {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  color: #808080
-}
-
-.choice-row .chip-button.disabled {
-  opacity: .5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
-  cursor: not-allowed
-}
-
-.choice-row .chip-button:hover {
-  background: #e6e6e6
-}
-
-.choice-row .chip-button:first-child {
-  margin-left: 0
-}
-
-.choice-row .chip-button:last-child {
-  margin-right: 0
+     /*  ;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box; */
 }
 
 img.money-emoji {

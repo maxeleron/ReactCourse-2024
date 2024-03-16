@@ -1,5 +1,8 @@
+import InputBlock from './InputBlock';
+
 function CardBody() {
-    return <div className='card-component'>
+    return <div className='card-component bg-white'>
+        <InputBlock />
         Body
     </div>
 }
