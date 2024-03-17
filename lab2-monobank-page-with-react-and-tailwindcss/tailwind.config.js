@@ -13,7 +13,9 @@ export default {
         'mono-jar-label-brown': '#8e5b5b',
         'mono-gray': '#808080',
         'mono-light-gray': '#e6e6e6',
-        'mono-incorrect-red': '#b30953'
+        'mono-incorrect-red': '#b30953',
+        'mono-pay-btn-hover': '#3c4043',
+        'mono-pay-btn-active': '#4b4f52'
       }
     },
   },

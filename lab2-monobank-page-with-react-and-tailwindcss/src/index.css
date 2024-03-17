@@ -78,79 +78,27 @@
     @apply block relative box-border w-[394px] box-border mb-8 p-6 rounded-3xl border-[solid] border-4 border-transparent border-[double] bg-[linear-gradient(white,white),linear-gradient(92.12deg,#57b5f9_0%,#da11ba_100%)];
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
-
-     /*  ;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box; */
-}
-
-img.money-emoji {
-  width: 16px;
-  margin-left: .5em;
-  margin-bottom: -3px
-}
-
-.inputF {
-  max-width: 306px;
-  width: 306px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 16px;
-  background: transparent;
-  padding: 0 16px;
-  height: 56px;
-  font-family: inherit;
-  font-weight: 600;
-}
-.field .input.inputF {
-text-transform: none;
-  background: none;
-  text-align: left;
-  border: 0;
-  color: #000;
-  height: 40px;
-  width: 100%;
-  font-size: 16px;
-  line-height: 24px;
-  border-radius: 0;
-  margin-top: 12px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0;
 }
 
 .inputF::placeholder {
-  font-size: 16px;
-  font-weight: 400;
-  text-align: left;
+  @apply text-base font-normal text-left translate-x-0 translate-y-0;
   transition: font-size 0.3s ease, transform 0.3s ease;
-  transform: translate(0, 0);
 }
 
 .inputF:focus::placeholder {
-  font-size: 12px;
-  text-align: left;
-  transform: translate(0%, -140%);
+  @apply text-xs text-left translate-x-[0%] translate-y-[-140%];
 }
 
 .inputF:hover::placeholder {
-  font-size: 12px;
-  text-align: left;
-  transform: translate(0%, -140%);
+  @apply text-xs text-left translate-x-[0%] translate-y-[-140%];
 }
 /* GRADIENT CONTAINER END */
 /* MonoPay START */
-.tap-to-pay, .mono-pay {
+.tap-to-pay {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  /* display: box; */
   display: flex;
   height: 48px;
   margin: 0 auto;
@@ -160,38 +108,6 @@ text-transform: none;
   justify-content: center;
 }
 
-.mono-pay {
-  cursor: pointer;
-  margin-bottom: 16px
-}
-
-.mono-pay .logo {
-  height: 26px;
-  margin: auto;
-  user-drag: none;
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-
-.mono-pay .logo.hidden {
-  display: none
-}
-
-.mono-pay:hover, .mono-pay:focus-visible {
-  background: #3c4043
-}
-
-.mono-pay:active {
-  background: #4b4f52
-}
-
-.gpay-card-info-container {
-  border-radius: 8px;
-  overflow: hidden
-}
 /* MonoPay END */
 /* GooglePay Button START */
 .gpay-button {

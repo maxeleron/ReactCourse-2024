@@ -7,24 +7,7 @@ function Frame() {
         <CardBody></CardBody>
     </div>
 
-    // return <>
-    //     <div className="card">
-    //     <div className="card__header">
-    //       
 
-    //     <div className="card__body">
-
-    //     </div>
-    //         <div className="field card-holder">
-    //             <input type="text" id="cardHolder" className="inputF" placeholder="Your name (optional)"/>
-    //             <span className="err"></span>
-    //         </div>
-    //         <div className="field payment-comment">
-    //             <input type="text" id="comment" className="inputF active" placeholder="Comment (optional)"/>
-    //         </div>
-    //         <div className="mono-pay">
-    //             <img src="https://send.monobank.ua/img/mono_pay.svg" alt="mono Pay" className="logo"/>
-    //         </div>
     //         <div className="tap-to-pay">
     //             <div className="gpay-button-fill">
     //                 <button type="button" className="gpay-button black plain short en"></button>
