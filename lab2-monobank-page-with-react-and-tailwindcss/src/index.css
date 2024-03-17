@@ -108,53 +108,6 @@
   justify-content: center;
 }
 
-/* MonoPay END */
-/* GooglePay Button START */
-.gpay-button {
-  background-origin: content-box;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  border: 0px;
-  border-radius: 4px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 1px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  cursor: pointer;
-  height: 40px;
-  min-height: 40px;
-  height: 100%;
-  padding: 12px 24px 10px;
-  display: flex;
-  width: 440px;
-}
-
-.gpay-button.black {
-  background-color: #000;
-  box-shadow: none;
-}
-
-.gpay-button.short, .gpay-button.plain {
-  min-width: 90px;
-  width: 340px;
-}
-
-.gpay-button.black.short, .gpay-button.black.plain {
-  background-image: url(https://www.gstatic.com/instantbuy/svg/dark_gpay.svg);
-}
-
-.gpay-button.black.short.new_style, .gpay-button.black.plain.new_style {
-  background-image: url(https://www.gstatic.com/instantbuy/svg/refreshedgraphicaldesign/dark_gpay.svg);
-  min-width: 160px;
-  background-size: contain;
-}
-
-.gpay-button.black.active {
-  background-color: #5f6368;
-}
-
-.gpay-button.white.focus {
-  box-shadow: #e8e8e8 0 1px 1px 0, #e8e8e8 0 1px 3px;
-} 
-/* GooglePay Button END */
 /* Manual card input START */
 #manual-pan-trigger {
   max-width: none;

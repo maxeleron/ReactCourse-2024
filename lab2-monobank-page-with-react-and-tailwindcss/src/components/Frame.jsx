@@ -7,12 +7,6 @@ function Frame() {
         <CardBody></CardBody>
     </div>
 
-
-    //         <div className="tap-to-pay">
-    //             <div className="gpay-button-fill">
-    //                 <button type="button" className="gpay-button black plain short en"></button>
-    //             </div>
-    //         </div>
     //         <div id="manual-pan-trigger" className="shown">
     //             <div className="splitter"></div>
     //             <div id="card-input-button" tabIndex="0">
