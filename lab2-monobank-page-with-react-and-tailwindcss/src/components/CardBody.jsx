@@ -2,6 +2,7 @@ import InputBlock from './InputBlock';
 import UserInputFields from './UserInputFields';
 import MonoPayButton from './MonoPayButton';
 import GPayButton from './GPayButton';
+import ManualCardBlock from './ManualCardBlock';
 
 function CardBody() {
     return <div className='card-component bg-white'>
@@ -9,7 +10,7 @@ function CardBody() {
         <UserInputFields />
         <MonoPayButton />
         <GPayButton />
-        Body
+        <ManualCardBlock />
     </div>
 }
 
