@@ -1,12 +1,10 @@
 # Lab 2
 
 # Implemented
-
-# To be implemented
 - [CSS] Use TailwindCSS for layout;
 - [JS] Redo Lab1 project with React;
-- [JS] Extra: use Vite
+- [JS] Use Vite
 
 # Note #1:
-
-# Note #2:
+Main moneyInput doesn`t have proper layout.
+Original div[contentEditable] didnt work. has to change it to <input> and input is not that flexible as div.

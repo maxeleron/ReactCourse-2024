@@ -19,7 +19,7 @@ function MoneyInput ({moneyValue, setMoneyValue, config}) {
                 <div className='whitespace-pre-wrap flex items-end'> ₴</div> 
         </div>
         <div style={{visibility: (config.minTransaction>moneyValue>0) ? 'visible': 'hidden'}}
-        className="font-normal text-xs leading-none text-center text-mono-gray -mt-6 mb-5 mx-4 block">
+        className='font-normal text-xs leading-none text-center text-mono-gray -mt-6 mb-5 mx-4 block'>
             Minimum amount: {config.minTransaction} ₴. Maximum amount: {config.maxTransaction} ₴
         </div>
     </>

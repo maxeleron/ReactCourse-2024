@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import { useState, useEffect, createContext } from 'react';
+import { useState, useEffect } from 'react';
 import Jar from './components/Jar';
 import JarDescription from './components/JarDescription';
 import JarStats from './components/JarStats';
@@ -12,6 +11,7 @@ import WidgetButton from './components/WidgetButton';
 import './App.css'
 
 function App(){
+  // List of constants that will be used globally
   const [config] = useState({
     minTransaction: 10,
     maxTransaction: 29999,
@@ -19,6 +19,7 @@ function App(){
     goalValue: 250000
   });
 
+  // List of states and updating them according to localStorage
   const [moneyInputValue, setMoneyInputValue] = useState(+window.localStorage.getItem('money_input_value') || 0);
   const [accamulatedValue, setAccamulatedValue] = useState(+window.localStorage.getItem('accamulated_value') || config.initialAccamulated);
   const [userName, setUserName] = useState(window.localStorage.getItem('user_name') || '');
@@ -38,7 +39,7 @@ function App(){
 
         <Jar accamulatedValue={accamulatedValue} config={config}/>
         <JarDescription />
-        <JarStats accamulatedValue={accamulatedValue} setAccamulatedValue={setAccamulatedValue}/>
+        <JarStats accamulatedValue={accamulatedValue} config={config}/>
       </div>
 
       {/* CardBody */}
@@ -86,6 +87,5 @@ function App(){
     </div>
   </>
 }
-export const MoneyContext = createContext('0');
 
-export default App
+export default App;
