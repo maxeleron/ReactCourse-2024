@@ -3,14 +3,13 @@
 @tailwind utilities;
 
 #moneyInputBlock {
-    @apply flex justify-center font-bold text-5xl text-center transition-opacity duration-[0.2s] px-0 py-5 mb-2;
-  }
+  @apply flex justify-center font-bold text-5xl text-center transition-opacity duration-[0.2s] px-0 py-5 mb-2;
+}
 
 /* State Classes */
-
 .empty {
-    @apply opacity-40;
-  }
+  @apply opacity-40;
+}
 
 .incorrect {
   @apply opacity-50 text-mono-incorrect-red;
@@ -28,27 +27,4 @@
 
 .inputF:hover::placeholder {
   @apply text-xs text-left translate-x-[0%] translate-y-[-140%];
-}
-/* Manual card input START */
-#card-input-button {
-  display: flex;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: center;
-  padding: 8px;
-  cursor: pointer;
-  background: transparent;
-  color: #e85e5b;
-  align-items: center;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -o-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-  transition: background 0.2s;
-  border-radius: 8px
 }
