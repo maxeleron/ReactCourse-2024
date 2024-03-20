@@ -1,18 +1,41 @@
 /* eslint-disable no-unused-vars */
-import { useState, createContext } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import Jar from './components/Jar';
 import JarDescription from './components/JarDescription';
 import JarStats from './components/JarStats';
 import MoneyInput from './components/MoneyInput';
 import ChipButton from './components/ChipButton';
-import UserInputFields from './components/UserInputFields';
+// import UserInputFields from './components/UserInputFields';
+import UserInputField from './components/UserInputField';
 import PayButton from './components/PayButton';
 import ManualCardBlock from './components/ManualCardBlock';
 import WidgetButton from './components/WidgetButton';
 import './App.css'
 
 function App(){
-  const [moneyInputValue, setMoneyInputValue] = useState(0);
+  const [config] = useState({
+    minTransaction: 10,
+    maxTransaction: 29999
+  });
+
+  const [moneyInputValue, setMoneyInputValue] = useState(+window.localStorage.getItem('money_input_value') || 0);
+  const [accamulatedValue, setAccamulatedValue] = useState(+window.localStorage.getItem('accamulated_value') || 0);
+  const [userName, setUserName] = useState(window.localStorage.getItem('user_name') || '');
+  const [userComment, setUserComment] = useState(window.localStorage.getItem('user_comment') || '');
+
+  useEffect(()=>{
+    window.localStorage.setItem('money_input_value', moneyInputValue);
+  }, [moneyInputValue]);
+
+  useEffect(()=>{
+    window.localStorage.setItem('accamulated_value', accamulatedValue);
+  }, [accamulatedValue]);
+
+  useEffect(()=>{
+    window.localStorage.setItem('user_name', userName);
+  }, [userName]);
+
+  useEffect(()=> window.localStorage.setItem('user_comment', userComment), [userComment]);
 
   return <>
     <div id="frame" className='flex min-h-[680px] max-w-[990px] w-full shadow-[0_0_14px_rgba(0,0,0,0.2)] overflow-hidden rounded-3xl'>
@@ -22,7 +45,7 @@ function App(){
 
         <Jar />
         <JarDescription />
-        <JarStats />
+        <JarStats accamulatedValue={accamulatedValue} setAccamulatedValue={setAccamulatedValue}/>
       </div>
 
       {/* CardBody */}
@@ -32,21 +55,25 @@ function App(){
             <div className="gradient-container">
                 <div className="text-center not-italic font-semibold text-sm leading-4 mt-0">Top up amount 💸</div>
                 <div id="moneyInputContainer">
-                <MoneyInput id='moneyInputContenteditable' moneyValue={moneyInputValue} setMoneyValue={setMoneyInputValue}/>
+                <MoneyInput id='moneyInputContenteditable' moneyValue={moneyInputValue} setMoneyValue={setMoneyInputValue} config={config}/>
                 </div>
             <div className="fee-warning">2% processing fee for non-Ukrainian cards</div>
             <div id='choiceRow' className="flex max-w-[346px] w-full mt-0 m-auto">
-                <ChipButton incrementValueUah={100} incrementValueEur={2.38} moneyValue={moneyInputValue} setMoneyValue={setMoneyInputValue} className='ml-0'/>
-                <ChipButton incrementValueUah={500} incrementValueEur={11.92} moneyValue={moneyInputValue} setMoneyValue={setMoneyInputValue}/>
-                <ChipButton incrementValueUah={1000} incrementValueEur={23.84} moneyValue={moneyInputValue} setMoneyValue={setMoneyInputValue} className='mr-0'/>
+                <ChipButton incrementValueUah={100} incrementValueEur={2.38} moneyValue={moneyInputValue} setMoneyValue={setMoneyInputValue} config={config} className='ml-0'/>
+                <ChipButton incrementValueUah={500} incrementValueEur={11.92} moneyValue={moneyInputValue} setMoneyValue={setMoneyInputValue} config={config}/>
+                <ChipButton incrementValueUah={1000} incrementValueEur={23.84} moneyValue={moneyInputValue} setMoneyValue={setMoneyInputValue} config={config} className='mr-0'/>
             </div>
         </div>
         </div>
         {/* InputBlock End*/}
-        <UserInputFields />
-        <PayButton id='monoPay' alt={'Mono Pay'} iconLink={'https://send.monobank.ua/img/mono_pay.svg'}/>
-        <PayButton id='gPay' alt={'GPay'} iconLink={'https://www.gstatic.com/instantbuy/svg/dark_gpay.svg'}/>
-
+        <UserInputField id={'cardHolder'} pH={'Your name (optional)'} inputValue={userName} setInputValue={setUserName}/>
+        <UserInputField id={'comment'} pH={'Comment (optional)'} inputValue={userComment} setInputValue={setUserComment}/>
+        <PayButton id='monoPay' alt={'Mono Pay'} iconLink={'https://send.monobank.ua/img/mono_pay.svg'} moneyValue={moneyInputValue} setMoneyValue={setMoneyInputValue} config={config}
+          userName={userName} setUserName={setUserName} userComment={userComment} setUserComment={setUserComment}
+          accamulatedValue={accamulatedValue} setAccamulatedValue={setAccamulatedValue}/>
+        <PayButton id='gPay' alt={'GPay'} iconLink={'https://www.gstatic.com/instantbuy/svg/dark_gpay.svg'} moneyValue={moneyInputValue} setMoneyValue={setMoneyInputValue} config={config}
+          userName={userName} setUserName={setUserName} userComment={userComment} setUserComment={setUserComment}
+          accamulatedValue={accamulatedValue} setAccamulatedValue={setAccamulatedValue}/>
         <ManualCardBlock />
       </div>
     </div>

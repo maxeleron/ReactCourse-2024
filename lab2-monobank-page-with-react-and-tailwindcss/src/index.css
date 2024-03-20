@@ -10,46 +10,12 @@
     @apply font-extrabold text-[10px] text-mono-jar-label-brown absolute whitespace-nowrap;
 }
 
-.stats-data {
-    @apply flex gap-3 mx-0 my-3 px-5 py-0;
-}
-
-.stats-data__label {
-    @apply font-normal text-sm leading-4 text-mono-gray;
-}
-
-.stats-data__value {
-    @apply font-medium text-base leading-6 text-black;
-}
-
 .fee-warning {
     @apply font-normal text-xs leading-4 text-center text-mono-gray -mt-5 mb-4;
 }
 
-.chip-button {
-    @apply border text-center transition-[background] duration-[0.2s] cursor-pointer select-none min-h-[40px] flex flex-1 flex-col justify-center mx-2 my-0 px-[3px] py-0 rounded-2xl border-solid border-[#ccc] bg-white;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -o-box-flex: 1;
-    box-flex: 1;
-    -webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
-    -o-box-orient: vertical;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -o-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    -ms-flex-pack: center;
-  }
-
-.chip-button:hover {
-    @apply bg-mono-light-gray;
-}
-
 #moneyInputBlock {
-    @apply flex justify-center font-bold text-5xl text-center transition-opacity duration-[0.2s] px-0 py-5;
+    @apply flex justify-center font-bold text-5xl text-center transition-opacity duration-[0.2s] px-0 py-5 mb-2;
   }
 
   /* State Classes */
