@@ -48,19 +48,9 @@
     @apply bg-mono-light-gray;
 }
 
-  .money-input-subtitle {
-    @apply font-normal text-xs leading-none text-center text-mono-gray -mt-6 mb-4 mx-4;
-  }
-  
-  .money-input-subtitle.hidden {
-    @apply opacity-0 select-none block;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-  }
-  
-  .money-input-block {
+#moneyInputBlock {
     @apply flex justify-center font-bold text-5xl text-center transition-opacity duration-[0.2s] px-0 py-5;
-}
+  }
 
   /* State Classes */
 
@@ -209,26 +199,9 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 24px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  /* display: box; */
   display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -o-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -o-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: background 0.2s ease-in-out;
   -moz-transition: background 0.2s ease-in-out;
@@ -245,6 +218,3 @@
 .widget-button:hover {
   background: rgba(255,255,255,0.2)
 }
-
-
-/* Footer END */
