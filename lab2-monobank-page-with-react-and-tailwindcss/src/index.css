@@ -2,40 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.card-component {
-    @apply w-6/12 flex flex-col items-center p-[42px];
-}
-
-.jar-label {
-    @apply font-extrabold text-[10px] text-mono-jar-label-brown absolute whitespace-nowrap;
-}
-
-.fee-warning {
-    @apply font-normal text-xs leading-4 text-center text-mono-gray -mt-5 mb-4;
-}
-
 #moneyInputBlock {
     @apply flex justify-center font-bold text-5xl text-center transition-opacity duration-[0.2s] px-0 py-5 mb-2;
   }
 
-  /* State Classes */
+/* State Classes */
 
-  .empty {
+.empty {
     @apply opacity-40;
   }
 
-  .incorrect {
-    @apply opacity-50 text-mono-incorrect-red;
-  }
-/* OLD CSS */
-
-/* GRADIENT CONTAINER START */
-.gradient-container {
-    @apply block relative box-border w-[394px] box-border mb-8 p-6 rounded-3xl border-[solid] border-4 border-transparent border-[double] bg-[linear-gradient(white,white),linear-gradient(92.12deg,#57b5f9_0%,#da11ba_100%)];
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box;
+.incorrect {
+  @apply opacity-50 text-mono-incorrect-red;
 }
 
+/* Placeholder styles */
 .inputF::placeholder {
   @apply text-base font-normal text-left translate-x-0 translate-y-0;
   transition: font-size 0.3s ease, transform 0.3s ease;
@@ -48,67 +29,8 @@
 .inputF:hover::placeholder {
   @apply text-xs text-left translate-x-[0%] translate-y-[-140%];
 }
-/* GRADIENT CONTAINER END */
-/* MonoPay START */
-.tap-to-pay {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 48px;
-  margin: 0 auto;
-  width: 340px;
-  border-radius: 8px;
-  background: #000;
-  justify-content: center;
-}
-
 /* Manual card input START */
-#manual-pan-trigger {
-  max-width: none;
-  padding-left: 24px;
-  padding-right: 24px;
-  margin: 0
-}
-
-#manual-pan-trigger {
-  display: none;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -o-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  margin-left: 24px;
-  margin-right: 24px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  max-width: 340px;
-  margin-bottom: 42px
-}
-
-#manual-pan-trigger.shown {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  /* display: box; */
-  display: flex
-}
-
-#manual-pan-trigger .splitter {
-  margin-top: 24px;
-  margin-bottom: 8px;
-  border-top: .5px solid #ccc;
-  width: 100%
-}
-
-#card-input-button,.button.white {
-  display: -webkit-flex;
-  display: -ms-flexbox;
+#card-input-button {
   display: flex;
   font-weight: 600;
   font-size: 14px;
@@ -118,11 +40,6 @@
   cursor: pointer;
   background: transparent;
   color: #e85e5b;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -o-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
   -webkit-box-pack: center;
   -moz-box-pack: center;
@@ -131,56 +48,7 @@
   -webkit-justify-content: center;
   justify-content: center;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: background 0.2s;
-  -moz-transition: background 0.2s;
-  -o-transition: background 0.2s;
-  -ms-transition: background 0.2s;
   transition: background 0.2s;
   border-radius: 8px
-}
-
-#card-input-button .card-icon,.button.white .card-icon {
-  width: 16px;
-  height: 26px;
-  margin-right: 8px
-}
-/* Manual card input END */
-/* Footer START */
-
-.widget-button {
-  background: rgba(255,255,255,0.08);
-  border: .5px solid rgba(255,255,255,0.4);
-  border-radius: 16px;
-  position: relative;
-  -webkit-align-self: end;
-  align-self: end;
-  -ms-flex-item-align: end;
-  padding: 0 16px;
-  height: 40px;
-  color: #fff;
-  margin-top: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  -webkit-transition: background 0.2s ease-in-out;
-  -moz-transition: background 0.2s ease-in-out;
-  -o-transition: background 0.2s ease-in-out;
-  -ms-transition: background 0.2s ease-in-out;
-  transition: background 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer
-}
-
-.widget-button:hover {
-  background: rgba(255,255,255,0.2)
 }
